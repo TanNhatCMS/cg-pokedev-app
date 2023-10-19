@@ -20,7 +20,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const getPokemon = async () => {
       const response = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=12&offset=20"
+        "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0"
       );
       console.log(response.data);
       setNextUrl(response.data.next);
@@ -62,7 +62,7 @@ const App: React.FC = () => {
           <div className="btn">
             <button onClick={nextPage}>
               {" "}
-              {loading ? "Loading..." : "Load more"}{" "}
+              {loading ? "Đang tải..." : "Xem thêm"}{" "}
             </button>
           </div>
         ) : ""}
