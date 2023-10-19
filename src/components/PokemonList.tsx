@@ -7,11 +7,11 @@ interface Props {
   name: string;
   image: string;
   abilities:
-    | {
-        name: string;
-        ability: string;
-      }[]
-    | undefined;
+  | {
+    name: string;
+    ability: string;
+  }[]
+  | undefined;
   viewDetail: ViewDetail;
   setViewDetail: React.Dispatch<React.SetStateAction<ViewDetail>>;
 }
@@ -22,7 +22,7 @@ const PokemonList: React.FC<Props> = (props) => {
 
   useEffect(() => {
     setSelected(id === viewDetail?.id);
-  }, [viewDetail]);
+  }, [id, viewDetail]);
 
   const closeViewDetail = () => {
     setViewDetail({ id: 0, isOpened: false });
