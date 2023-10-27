@@ -20,7 +20,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const getPokemon = async () => {
       const response = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0"
+        "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0"
       );
       console.log(response.data);
       setNextUrl(response.data.next);
